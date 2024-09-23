@@ -1,0 +1,66 @@
+<div class="main-div">
+    <div
+      style="
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      "
+    >
+      <span
+        style="
+          display: flex;
+          justify-content: end;margin-left: 45%;
+          align-items: center;
+        "
+        >Have an account<button class="login-btn" (click)="submitLogin()">
+          Login
+        </button></span
+      >
+      <form [formGroup]="loginForm" style="width: 80%">
+        <h1 style="text-align: center">Login</h1>
+        <div class="row main-row">
+            <div class="col main-col">
+                <label class="mb-1">Name</label>
+                <mat-form-field class="form-element" appearance="outline">
+                  <input matInput formControlName="name" />
+                  <mat-error *ngIf="!loginForm.controls['name'].valid && submitted">
+                    name is Requried
+                  </mat-error>
+                </mat-form-field>
+              </div>
+          <div class="col main-col">
+            <label class="mb-1">Email Name</label>
+            <mat-form-field class="form-element" appearance="outline">
+              <input matInput formControlName="Email" />
+              <mat-error *ngIf="!loginForm.controls['Email'].valid && submitted">
+                Email is Requried
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col main-col">
+            <label class="mb-1">Password</label>
+  
+            <mat-form-field class="form-element" appearance="outline">
+              <input matInput formControlName="password" />
+              <mat-error
+                *ngIf="!loginForm.controls['password'].valid && submitted"
+              >
+                password is Requried
+              </mat-error>
+            </mat-form-field>
+          </div>
+  
+          <button
+            class="login-btn"
+            (click)="submitLogin()"
+            style="width: 150px; height: 60px"
+          >
+            Signup
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
