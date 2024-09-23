@@ -3,12 +3,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-create-places',
+  templateUrl: './create-places.component.html',
+  styleUrls: ['./create-places.component.scss']
 })
-export class LoginComponent {
-  loginForm!: FormGroup;
+export class CreatePlacesComponent {
+  createplace!: FormGroup;
   submitted = false;
 
   constructor(    private formBuilder: FormBuilder,private router:Router
@@ -16,9 +16,10 @@ export class LoginComponent {
     
   }
   ngOnInit() {
-  this.loginForm = this.formBuilder.group({
-    Email: ['', [Validators.required]],
-    password: ['', Validators.required]
+  this.createplace = this.formBuilder.group({
+    place: ['', [Validators.required]],
+    description: ['', Validators.required],
+    address: ['', Validators.required]
   });
 }
 submitLogin(){
